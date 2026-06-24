@@ -1,13 +1,32 @@
+import { useState, useEffect} from 'react'
+import { db } from "./firebaseConfig"
+import { doc, getDoc} from "firebase/firestore"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import eventImg from './assets/the-project.png'
-import saleImg from './assets/sale-banner.png'
-import giftImg from './assets/gift-shop-banner.png'
 import './Banner.css'
 
 function Banner() { 
+  const [eventImg, setEventImg] = useState(null)
+  const [saleImg, setSaleImg] = useState(null)
+  const [giftImg, setGiftImg] = useState(null)
+
+  useEffect(() => {
+    async function fetchImage() { 
+      const docSnap = await getDoc(doc(db, "banner-images", "banners"))
+      console.log("exists:", docSnap.exists());     
+      console.log("data:", docSnap.data()); 
+      if (docSnap.exists()) {
+        setEventImg(docSnap.data().image)
+        setSaleImg(docSnap.data().image2)
+        setGiftImg(docSnap.data().image3)
+      }
+    }
+    fetchImage();
+  },[]);
+
+
   return ( 
     <div className="banner-container">
       <Swiper
