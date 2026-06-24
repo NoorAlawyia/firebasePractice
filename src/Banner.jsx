@@ -15,8 +15,6 @@ function Banner() {
   useEffect(() => {
     async function fetchImage() { 
       const docSnap = await getDoc(doc(db, "banner-images", "banners"))
-      console.log("exists:", docSnap.exists());     
-      console.log("data:", docSnap.data()); 
       if (docSnap.exists()) {
         setEventImg(docSnap.data().image)
         setSaleImg(docSnap.data().image2)
