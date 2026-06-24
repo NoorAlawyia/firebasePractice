@@ -1,0 +1,16 @@
+.hotpicks-carousel {
+  width: 90%;
+  height: 30vh;
+  margin: 0 auto;
+}
+
+.hotpicks-carousel .swiper,
+.hotpicks-carousel .swiper-slide {
+  height: 100%;
+}
+
+.hotpick-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
