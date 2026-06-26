@@ -5,6 +5,7 @@ import { doc, getDoc} from "firebase/firestore"
 import { Navigation, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import './HotPicks.css'
 
 function HotPicks(){ 
     const [image1, setImage1] = useState(null)
@@ -37,15 +38,15 @@ return(
             navigation
             slidesPerView={3}
             slidesPerGroup={3}
-            spaceBetween={80}
+            spaceBetween={0}
             loop={true} 
         > 
-        <SwiperSlide><img src={image1} className="item1" /> </SwiperSlide>
-        <SwiperSlide><img src={image2} className="item2" /> </SwiperSlide>
-        <SwiperSlide><img src={image3} className="item3" /> </SwiperSlide>
-        <SwiperSlide><img src={image4} className="item4" /> </SwiperSlide>
-        <SwiperSlide><img src={image5} className="item5" /> </SwiperSlide>
-        <SwiperSlide><img src={image6} className="item6" /> </SwiperSlide>
+        <SwiperSlide><img src={image1} className="item" /> </SwiperSlide>
+        <SwiperSlide><img src={image2} className="item" /> </SwiperSlide>
+        <SwiperSlide><img src={image3} className="item" /> </SwiperSlide>
+        <SwiperSlide><img src={image4} className="item" /> </SwiperSlide>
+        <SwiperSlide><img src={image5} className="item" /> </SwiperSlide>
+        <SwiperSlide><img src={image6} className="item" /> </SwiperSlide>
         </Swiper>
     </div>
 )

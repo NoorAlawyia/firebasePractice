@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './Navbar'
 import Banner from './Banner'
 import HotPicks from './HotPicks'
+import FDesigner from './FDesigner'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <Banner /> 
       <HotPicks />  
+      <FDesigner /> =
     <div className="ticks"></div>
 
       <section id="next-steps">
